@@ -1,0 +1,16 @@
+PODS:
+  - LDZFVoiceConvert (0.1.0)
+
+DEPENDENCIES:
+  - LDZFVoiceConvert (from `../`)
+
+EXTERNAL SOURCES:
+  LDZFVoiceConvert:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  LDZFVoiceConvert: 81dbe7166a884f63e3e3fefde404715d0e4ae090
+
+PODFILE CHECKSUM: b91a1faf0243ea2aedb5f800a195d6af6c42d356
+
+COCOAPODS: 1.11.2
