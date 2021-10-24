@@ -28,20 +28,21 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/ZiOS-Repo/LDZFVoiceConvert.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '9.0'
-  s.private_header_files = 'LDZFVoiceConvert/**/amrwapper/wav.h'
-  s.source_files =  'LDZFVoiceConvert/**/*.{h,m,mm}'
-  s.vendored_libraries = [
-    'LDZFVoiceConvert/**/libopencore-amrnb.a',
-    'LDZFVoiceConvert/**/libopencore-amrwb.a',
-  ]
-  s.frameworks =  'AVFoundation'
-  s.libraries  = 'stdc++'  # s.resource_bundles = {
-  #   'LDZFVoiceConvert' => ['LDZFVoiceConvert/Assets/*.png']
-  # }
+  s.platform     = :ios, '9.0'
+  s.requires_arc = true
+  s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  
+  s.frameworks =  'AVFoundation', 'CoreTelephony', 'SystemConfiguration', 'MobileCoreServices'
+  s.libraries  =  'sqlite3', 'icucore', 'stdc++'
+  s.xcconfig = { "FRAMEWORK_SEARCH_PATHS" => "${PODS_ROOT}/LDZFVoiceConvert/Meiqia-SDK-files"}
+  
+  # avoid compile error when using 'use frameworks!',because this header is c++, but in unbrellar header don't know how to compile, there's no '.mm' file in the context.
+  s.private_header_files = 'Meiqia-SDK-files/MQChatViewController/Vendors/VoiceConvert/amrwapper/wav.h'
+  s.source_files = 'Meiqia-SDK-files/MQChatViewController/**/*.{h,m,mm,cpp}'
+  s.vendored_libraries = 'Meiqia-SDK-files/MQChatViewController/Vendors/MLAudioRecorder/amr_en_de/lib/libopencore-amrnb.a', 'Meiqia-SDK-files/MQChatViewController/Vendors/MLAudioRecorder/amr_en_de/lib/libopencore-amrwb.a'
+  #ss.preserve_path = '**/libopencore-amrnb.a', '**/libopencore-amrwb.a'
+  s.xcconfig = { "LIBRARY_SEARCH_PATHS" => "\"$(PODS_ROOT)/LDZFVoiceConvert/Meiqia-SDK-files\"" }
 end
 # pod trunk push LDZFVoiceConvert.podspec --use-libraries --verbose --allow-warnings

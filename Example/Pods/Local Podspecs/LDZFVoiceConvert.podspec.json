@@ -18,12 +18,31 @@
   "platforms": {
     "ios": "9.0"
   },
-  "private_header_files": "LDZFVoiceConvert/**/amrwapper/wav.h",
-  "source_files": "LDZFVoiceConvert/**/*.{h,m,mm}",
-  "vendored_libraries": [
-    "LDZFVoiceConvert/**/libopencore-amrnb.a",
-    "LDZFVoiceConvert/**/libopencore-amrwb.a"
+  "requires_arc": true,
+  "pod_target_xcconfig": {
+    "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64"
+  },
+  "user_target_xcconfig": {
+    "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64"
+  },
+  "frameworks": [
+    "AVFoundation",
+    "CoreTelephony",
+    "SystemConfiguration",
+    "MobileCoreServices"
   ],
-  "frameworks": "AVFoundation",
-  "libraries": "stdc++"
+  "libraries": [
+    "sqlite3",
+    "icucore",
+    "stdc++"
+  ],
+  "xcconfig": {
+    "LIBRARY_SEARCH_PATHS": "\"$(PODS_ROOT)/LDZFVoiceConvert/Meiqia-SDK-files\""
+  },
+  "private_header_files": "Meiqia-SDK-files/MQChatViewController/Vendors/VoiceConvert/amrwapper/wav.h",
+  "source_files": "Meiqia-SDK-files/MQChatViewController/**/*.{h,m,mm,cpp}",
+  "vendored_libraries": [
+    "Meiqia-SDK-files/MQChatViewController/Vendors/MLAudioRecorder/amr_en_de/lib/libopencore-amrnb.a",
+    "Meiqia-SDK-files/MQChatViewController/Vendors/MLAudioRecorder/amr_en_de/lib/libopencore-amrwb.a"
+  ]
 }
