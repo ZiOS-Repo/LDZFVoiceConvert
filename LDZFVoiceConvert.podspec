@@ -28,16 +28,15 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/ZiOS-Repo/LDZFVoiceConvert.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-#  s.ios.deployment_target = '9.0'
-  s.platform     = :ios, '9.0'
-  # s.source_files = 'LDZFVoiceConvert/Classes/**/*'
-  s.requires_arc = true
-  s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
-  s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
-
+  s.ios.deployment_target = '9.0'
+  s.private_header_files = 'LDZFVoiceConvert/**/amrwapper/wav.h'
   s.source_files =  'LDZFVoiceConvert/**/*.{h,m,mm}'
-  s.vendored_libraries  = 'LDZFVoiceConvert/**/*.{a}'  
-  # s.resource_bundles = {
+  s.vendored_libraries = [
+    'LDZFVoiceConvert/**/libopencore-amrnb.a',
+    'LDZFVoiceConvert/**/libopencore-amrwb.a',
+  ]
+  s.frameworks =  'AVFoundation'
+  s.libraries  = 'stdc++'  # s.resource_bundles = {
   #   'LDZFVoiceConvert' => ['LDZFVoiceConvert/Assets/*.png']
   # }
 

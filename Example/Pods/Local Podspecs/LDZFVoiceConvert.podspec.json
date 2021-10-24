@@ -18,6 +18,12 @@
   "platforms": {
     "ios": "9.0"
   },
+  "private_header_files": "LDZFVoiceConvert/**/amrwapper/wav.h",
   "source_files": "LDZFVoiceConvert/**/*.{h,m,mm}",
-  "vendored_libraries": "LDZFVoiceConvert/**/*.{a}"
+  "vendored_libraries": [
+    "LDZFVoiceConvert/**/libopencore-amrnb.a",
+    "LDZFVoiceConvert/**/libopencore-amrwb.a"
+  ],
+  "frameworks": "AVFoundation",
+  "libraries": "stdc++"
 }
