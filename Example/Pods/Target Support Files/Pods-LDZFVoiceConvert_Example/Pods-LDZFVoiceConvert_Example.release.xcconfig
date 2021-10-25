@@ -4,7 +4,7 @@ FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/LDZFVoice
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/LDZFVoiceConvert/LDZFVoiceConvert.framework/Headers"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/../../Meiqia-SDK-files/MQChatViewController/Vendors/MLAudioRecorder/amr_en_de/lib" "$(PODS_ROOT)/LDZFVoiceConvert/Meiqia-SDK-files"
+LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/LDZFVoiceConvert/Meiqia-SDK-files/MQChatViewController/Vendors/MLAudioRecorder/amr_en_de/lib" "$(PODS_ROOT)/LDZFVoiceConvert/Meiqia-SDK-files"
 OTHER_LDFLAGS = $(inherited) -ObjC -l"icucore" -l"sqlite3" -l"stdc++" -framework "AVFoundation" -framework "CoreTelephony" -framework "LDZFVoiceConvert" -framework "MobileCoreServices" -framework "SystemConfiguration"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)

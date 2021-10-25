@@ -2,15 +2,15 @@ PODS:
   - LDZFVoiceConvert (0.1.0)
 
 DEPENDENCIES:
-  - LDZFVoiceConvert (from `../`)
+  - LDZFVoiceConvert
 
-EXTERNAL SOURCES:
-  LDZFVoiceConvert:
-    :path: "../"
+SPEC REPOS:
+  trunk:
+    - LDZFVoiceConvert
 
 SPEC CHECKSUMS:
   LDZFVoiceConvert: 4035365b6209348cabfedfd60196896a8ef93570
 
-PODFILE CHECKSUM: b91a1faf0243ea2aedb5f800a195d6af6c42d356
+PODFILE CHECKSUM: 85b65817897a771e7da9a697b920025846b3be67
 
 COCOAPODS: 1.11.2
